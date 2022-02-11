@@ -20,12 +20,25 @@
 
 :root {
     /* ----------- Typography ----------- */
-    --ff-primary: font-family: 'Epilogue', sans-serif;
+    --ff-primary: 'Epilogue', sans-serif;
     /* Sizes */
-    --fs-body: 16px;
-    --fs-hero-heading: 38px;
-    --fs-testimonial-heading: 40px;
-    --fs-cta-secondary: 14px;
+    /* These font size values won't change. Added as variables so its easy to know the PX value */
+    --fs-14: 0.875rem;
+    --fs-15: 0.9375rem;
+    --fs-16: 1rem;
+    --fs-18: 1.125rem;
+    --fs-20: 1.25rem;
+    --fs-38: 2.375rem;
+    --fs-40: 2.5rem;
+    --fs-48: 3rem;
+    --fs-56: 3.5rem;
+    --fs-72: 4.5rem;
+    /* These font sizes will change at different breakpoints. Added as variables in order to reduce
+    number of media queries used */
+    --fs-body: var(--fs-16);
+    --fs-hero-heading: var(--fs-38);
+    --fs-testimonial-heading: var(--fs-40);
+    --fs-cta-secondary: var(--fs-14);
     /* Weights */
     --fw-regular: 400;
     --fw-bold: 700;
@@ -40,27 +53,39 @@
     --clr-primary: var(--clr-dark-blue);
     --clr-secondary: var(--clr-cream-white);
     --clr-secondary-dark: var(--clr-cream);
+    --clr-text: var(--clr-grey);
+    --clr-text-light: var(--clr-cream);
+    --clr-heading: var(--clr-dark-blue);
+    --clr-body-bg: var(--clr-cream-white);
     --gradient-accent: linear-gradient(135deg, var(--clr-lavender-indigo) 0%, var(--clr-steel-pink) 49.21%, var(--clr-pastel-orange) 100%);
+    --gradient-body-bg: linear-gradient(to bottom, var(--clr-cream-white) 82%, var(--clr-cream) 82%);
     /* ----------- Dimensions ----------- */
-    --site-content-width: 1110px;
-    --site-horizontal-spacing: 16px;
+    /* 1110px */
+    --page-max-content-width: 69.375rem;
+    --page-horizontal-spacing: 1rem;
+    /* 56px */
+    --section-spacing: 3.5rem;
 }
 
-@media only screen and (min-width: 768px) {
+
+/* 768px */
+
+@media only screen and (min-width: 48rem) {
      :root {
         /* ----------- Typography ----------- */
-        --fs-hero-heading: 56px;
-        --fs-cta-secondary: 16px;
+        --fs-hero-heading: var(--fs-56);
+        --fs-cta-secondary: var(--fs-16);
         /* ----------- Dimensions ----------- */
-        --site-horizontal-spacing: 39px;
+        /* 39px */
+        --page-horizontal-spacing: 2.4375rem;
     }
 }
 
-@media only screen and (min-width: 1110px) {
+@media only screen and (min-width: 69.375rem) {
      :root {
-        --fs-body: 18px;
-        --fs-hero-heading: 72px;
-        --fs-testimonial-heading: 48px;
+        --fs-body: var(--fs-18);
+        --fs-hero-heading: var(--fs-72);
+        --fs-testimonial-heading: var(--fs-48);
     }
 }
 
@@ -71,6 +96,8 @@ body {
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.75;
+    color: var(--clr-text);
+    background: var(--gradient-body-bg);
 }
 
 a,
@@ -84,8 +111,60 @@ a:active {
 
 /* -------------------- || 3. UTILLITIES --------------------*/
 
+.a-wraps-img {
+    line-height: 0;
+}
+
 
 /* -------------------- || 4. COMPONENTS --------------------*/
+
+
+/* ----------- CTA Button ----------- */
+
+.cta-btn {
+    display: inline-block;
+    /* 15px 32px */
+    padding: 0.9375em 2em;
+    /* 6px */
+    border-radius: 0.375rem;
+    font-size: var(--fs-18);
+    font-weight: bold;
+    line-height: 1.7;
+    background: var(--clr-primary);
+    color: var(--clr-secondary);
+}
+
+.cta-btn,
+.cta-btn:visited,
+.cta-btn:hover,
+.cta-btn:active {
+    color: var(--clr-secondary);
+}
+
+.cta-btn:hover {
+    background: var(--gradient-accent);
+}
+
+.cta-btn--secondary {
+    /* 12px 16px */
+    padding: 0.75em 1em;
+    border: 1px solid var(--clr-primary);
+    font-size: var(--fs-14);
+    background: none;
+    color: var(--clr-primary);
+}
+
+.cta-btn--secondary,
+.cta-btn--secondary:visited,
+.cta-btn--secondary:hover,
+.cta-btn--secondary:active {
+    color: var(--clr-primary);
+}
+
+.cta-btn--secondary:hover {
+    background: var(--clr-primary);
+    color: var(--clr-secondary);
+}
 
 
 /* -------------------- || 5. LAYOUT --------------------*/
@@ -94,7 +173,204 @@ a:active {
 /* ----------- 5.1. Common ----------- */
 
 .container {
-    max-width: calc(var(--site-content-width) + (var(--site-horizontal-spacing) * 2));
+    max-width: calc(var(--page-max-content-width) + (var(--page-horizontal-spacing) * 2));
     margin: 0 auto;
-    padding: 0 var(--site-horizontal-spacing);
+    padding: 0 var(--page-horizontal-spacing);
+}
+
+
+/* ----------- 5.2. Primary Header ----------- */
+
+.primary-header__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* 24px */
+    padding-top: 1.5rem;
+}
+
+
+/* ----------- 5.3. Hero ----------- */
+
+.hero {
+    padding-top: var(--section-spacing);
+}
+
+.hero__heading {
+    margin-bottom: .842em;
+    font-size: var(--fs-hero-heading);
+    font-weight: var(--fw-regular);
+    line-height: 1.157;
+    color: var(--clr-heading);
+}
+
+.hero__heading span {
+    font-weight: var(--fw-bold);
+}
+
+.hero__heading-word {
+    display: inline-block;
+    position: relative;
+    margin-top: 1.052em;
+}
+
+.hero__heading-word svg {
+    display: block;
+    position: absolute;
+    top: -1.052em;
+    width: 100%;
+}
+
+.hero__paragraph {
+    margin-bottom: 2em;
+}
+
+.hero__image {
+    width: 100%;
+    /* 55px */
+    margin: 3.4375rem 0;
+}
+
+.hero__image img {
+    width: 100%;
+    height: auto;
+}
+
+.hero__stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero__stat {
+    font-size: var(--fs-48);
+}
+
+.hero__stat+.hero__stat {
+    margin-top: .6em;
+}
+
+.hero__stat-text {
+    font-weight: var(--fw-bold);
+    line-height: 1.16;
+    text-transform: uppercase;
+    color: var(--clr-primary);
+}
+
+.hero__stat-heading {
+    font-size: var(--fs-body);
+    line-height: 1.625;
+    text-transform: uppercase;
+    color: var(--clr-grey);
+}
+
+
+/* ----------- 5.4. Testimonial ----------- */
+
+.testimonial {
+    padding-top: var(--section-spacing);
+    color: var(--clr-text-light);
+    font-size: var(--fs-18);
+    text-align: center;
+}
+
+.testimonial__container {
+    position: relative;
+}
+
+.testimonial__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    /* 64px */
+    padding-bottom: 4rem;
+}
+
+.testimonial__background {
+    position: absolute;
+    height: 76%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    /* 15px */
+    border-radius: 0.9375rem;
+    background-color: var(--clr-dark-blue);
+    z-index: -1;
+}
+
+.testimonial__photo-container {
+    width: min(100%, 538px);
+    height: 395px;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial__photo {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+}
+
+.testimonial__photo img {
+    object-fit: cover;
+}
+
+.testimonial__photo-background {
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial__curved-line {
+    margin: 40px 0;
+}
+
+.testimonial__heading {
+    margin-bottom: 1em;
+    font-size: var(--fs-testimonial-heading);
+    font-weight: var(--fw-regular);
+    line-height: 1.2;
+}
+
+.testimonial__quote {
+    margin-bottom: 2.22em;
+}
+
+.testimonial__attestant-name {
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+}
+
+
+/* ----------- 5.5. Primary Footer ----------- */
+
+.primary-footer__container {
+    --gap: 33px;
+    display: flex;
+    /* 56px */
+    padding-top: 3.5rem;
+    /* 80px */
+    padding-bottom: 5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.primary-footer__container>*+* {
+    margin-top: var(--gap)
+}
+
+.primary-footer__socials {
+    display: flex;
+}
+
+.primary-footer__social {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.primary-footer__social+.primary-footer__social {
+    margin-left: 28px;
 }
