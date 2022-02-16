@@ -268,8 +268,13 @@ a:active {
     margin-bottom: 2em;
 }
 
+.hero__image {
+    text-align: center;
+}
+
 .hero__image img {
-    width: 100%;
+    /* 443px */
+    width: min(100%, 27.6875rem);
     height: auto;
 }
 
@@ -534,7 +539,8 @@ a:active {
 /* ----------- 5.5. Primary Footer ----------- */
 
 .primary-footer__container {
-    --gap: 33px;
+    /* 33px */
+    --gap: 2.0625rem;
     display: flex;
     /* 56px */
     padding-top: 3.5rem;
