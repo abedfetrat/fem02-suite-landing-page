@@ -389,6 +389,7 @@ a:active {
 
 .testimonial__container {
     position: relative;
+    overflow-x: hidden;
 }
 
 .testimonial__content {
