@@ -75,6 +75,8 @@
         /* ----------- Typography ----------- */
         --fs-hero-heading: var(--fs-56);
         --fs-cta-secondary: var(--fs-16);
+        /* ----------- Colors ----------- */
+        --gradient-body-bg: linear-gradient(to bottom, var(--clr-cream-white) 66%, var(--clr-cream) 66%);
         /* ----------- Dimensions ----------- */
         /* 39px */
         --page-horizontal-spacing: 2.4375rem;
@@ -87,9 +89,12 @@
 
 @media only screen and (min-width: 69.375rem) {
      :root {
+        /* ----------- Typography ----------- */
         --fs-body: var(--fs-18);
         --fs-hero-heading: var(--fs-72);
         --fs-testimonial-heading: var(--fs-48);
+        /* ----------- Colors ----------- */
+        --gradient-body-bg: linear-gradient(to bottom, var(--clr-cream-white) 72%, var(--clr-cream) 72%);
     }
 }
 
@@ -121,6 +126,16 @@ a:active {
 
 
 /* -------------------- || 4. COMPONENTS --------------------*/
+
+
+/* ----------- Logo ----------- */
+
+.logo {
+    /* 81px */
+    width: 5.0625rem;
+    /* 32px */
+    height: 2rem;
+}
 
 
 /* ----------- CTA Button ----------- */
@@ -460,6 +475,9 @@ a:active {
 
 @media screen and (min-width: 48rem) {
     .testimonial__background {
+        /* Mimics left and right padding */
+        width: calc(100% - (var(--page-horizontal-spacing) * 2));
+        left: var(--page-horizontal-spacing);
         height: 80%;
     }
     .testimonial__quote {
@@ -481,9 +499,6 @@ a:active {
         text-align: start;
     }
     .testimonial__background {
-        /* Mimics left and right padding */
-        width: calc(100% - (var(--page-horizontal-spacing) * 2));
-        left: var(--page-horizontal-spacing);
         height: 93%;
     }
     .testimonial__photo-container {
@@ -538,11 +553,41 @@ a:active {
     display: flex;
 }
 
-.primary-footer__social {
+.primary-footer__social:hover {
+    opacity: .5;
+}
+
+.primary-footer__social-icon {
     width: 1.25rem;
     height: 1.25rem;
 }
 
 .primary-footer__social+.primary-footer__social {
-    margin-left: 28px;
+    /* 28px */
+    margin-left: 1.75rem;
+}
+
+
+/* Tablet 768px */
+
+@media screen and (min-width: 48rem) {
+    .primary-footer__container {
+        --gap: 0px;
+        flex-direction: row;
+        /* 72px */
+        padding-top: 4.5rem;
+        padding-bottom: 4.5rem;
+    }
+}
+
+
+/* Desktop 1110px */
+
+@media screen and (min-width: 69.375rem) {
+    .primary-footer__container {
+        /* 95px */
+        padding-top: 5.9375rem;
+        /* 72px */
+        padding-bottom: 4.5rem;
+    }
 }
