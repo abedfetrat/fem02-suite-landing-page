@@ -49,10 +49,10 @@
                     <a class="cta-btn" href="#">Request Beta Access</a>
                 </div>
                 <picture class="hero__image">
-                    <source srcset="./assets/image-hero-portrait.webp, ./assets/image-hero-portrait@2x.webp 2x" media="(min-width: 768px)">
-                    <source srcset="./assets/image-hero-portrait.png, ./assets/image-hero-portrait@2x.png 2x" media="(min-width: 768px)">
-                    <source srcset="./assets/image-hero-landscape.webp, ./assets/image-hero-landscape@2x.webp 2x">
-                    <source srcset="./assets/image-hero-landscape.png, ./assets/image-hero-landscape@2x.png 2x">
+                    <source srcset="./assets/image-hero-portrait.webp, ./assets/image-hero-portrait@2x.webp 2x" type="image/webp" media="(min-width: 768px)">
+                    <source srcset="./assets/image-hero-portrait.png, ./assets/image-hero-portrait@2x.png 2x" type="image/png" media="(min-width: 768px)">
+                    <source srcset="./assets/image-hero-landscape.webp, ./assets/image-hero-landscape@2x.webp 2x" type="image/webp">
+                    <source srcset="./assets/image-hero-landscape.png, ./assets/image-hero-landscape@2x.png 2x" type="image/png">
                     <img src="./assets/image-hero-landscape.png" width="343" height="240" alt="Suite mobile app">
                 </picture>
                 <div class="hero__stats">
@@ -77,10 +77,10 @@
                 <div class="testimonial__content">
                     <div class="testimonial__photo-container">
                         <picture class="testimonial__photo">
-                            <source srcset="./assets/image-jeremy-large.webp, ./assets/image-jeremy-large@2x.webp 2x" media="(min-width: 1110px)">
-                            <source srcset="./assets/image-jeremy-large.png, ./assets/image-jeremy-large@2x.png 2x" media="(min-width: 1110px)">
-                            <source srcset="./assets/image-jeremy-small.webp, ./assets/image-jeremy-small@2x.webp 2x">
-                            <source srcset="./assets/image-jeremy-small.png, ./assets/image-jeremy-small@2x.png 2x">
+                            <source srcset="./assets/image-jeremy-large.webp, ./assets/image-jeremy-large@2x.webp 2x" type="image/webp" media="(min-width: 1110px)">
+                            <source srcset="./assets/image-jeremy-large.png, ./assets/image-jeremy-large@2x.png 2x" type="image/png" media="(min-width: 1110px)">
+                            <source srcset="./assets/image-jeremy-small.webp, ./assets/image-jeremy-small@2x.webp 2x" type="image/webp">
+                            <source srcset="./assets/image-jeremy-small.png, ./assets/image-jeremy-small@2x.png 2x" type="image/png">
                             <img src="./assets/image-jeremy-small.png" width="243" height="395" alt="Jeremy using the Suite mobile app">
                         </picture>
                         <svg class="testimonial__photo-background" width="538" height="538" viewBox="0 0 538 538" aria-hidden="true">
@@ -102,15 +102,17 @@
                         <div class="testimonial__text-content">
                             <h2 id="testimonial-heading" class="testimonial__heading">It just <strong>works.</strong>
                             </h2>
-                            <blockquote>
-                                <p class="testimonial__quote">
-                                    “I really like how it is an all-in-one solution that handle many of the tasks that you would normally need separate tools to do the same job. This thing is a miracle worker.”
-                                </p>
-                            </blockquote>
-                            <figcaption>
-                                <p class="testimonial__attestant-name">Jeremy Robinson</p>
-                                <p class="testimonial__attestant-title">CMO, FYLO</p>
-                            </figcaption>
+                            <figure>
+                                <blockquote>
+                                    <p class="testimonial__quote">
+                                        “I really like how it is an all-in-one solution that handle many of the tasks that you would normally need separate tools to do the same job. This thing is a miracle worker.”
+                                    </p>
+                                </blockquote>
+                                <figcaption>
+                                    <p class="testimonial__attestant-name">Jeremy Robinson</p>
+                                    <p class="testimonial__attestant-title">CMO, FYLO</p>
+                                </figcaption>
+                            </figure>
                         </div>
                     </div>
                 </div>
