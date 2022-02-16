@@ -13,8 +13,6 @@ This is a solution to the [Suite landing page challenge on Frontend Mentor](http
   - [What I learned](#what-i-learned)
 - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -30,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/responsive-landing-page-using-css-grid-flexbox-and-bem-4CbK9wa5f)
+- Live Site URL: [Live Site](https://abedfetrat.github.io/fem02-suite-landing-page/)
 
 ## My process
 
