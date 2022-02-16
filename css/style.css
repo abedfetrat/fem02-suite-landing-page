@@ -214,6 +214,26 @@ a:active {
 }
 
 
+/* Tablet 768px */
+
+@media screen and (min-width: 48rem) {
+    .primary-header__container {
+        /* 40px */
+        padding-top: 2.5rem;
+    }
+}
+
+
+/* Desktop 1110px */
+
+@media screen and (min-width: 69.375rem) {
+    .primary-header__container {
+        /* 40px */
+        padding-top: 3.125rem;
+    }
+}
+
+
 /* ----------- 5.3. Hero ----------- */
 
 .hero {
