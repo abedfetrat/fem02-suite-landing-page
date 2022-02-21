@@ -322,8 +322,9 @@ a:active {
 }
 
 .hero__stat-heading {
-    font-size: var(--fs-body);
+    font-size: var(--fs-16);
     line-height: 1.625;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--clr-grey);
 }
@@ -501,6 +502,7 @@ a:active {
     font-size: var(--fs-testimonial-heading);
     font-weight: var(--fw-regular);
     line-height: 1.2;
+    color: var(--clr-cream-white-lighter);
 }
 
 .testimonial__quote {
@@ -510,6 +512,12 @@ a:active {
 .testimonial__attestant-name {
     font-weight: var(--fw-bold);
     text-transform: uppercase;
+    color: var(--clr-cream-white);
+}
+
+.testimonial__attestant-title {
+    font-size: var(--fs-16);
+    letter-spacing: 2.5px;
 }
 
 
@@ -569,6 +577,7 @@ a:active {
     }
     .testimonial__quote {
         width: 33ch;
+        font-size: var(--fs-20);
     }
 }
 
@@ -594,6 +603,12 @@ a:active {
 
 .primary-footer__socials {
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary-footer__social {
+    line-height: 0;
 }
 
 .primary-footer__social:hover {
@@ -608,6 +623,10 @@ a:active {
 .primary-footer__social+.primary-footer__social {
     /* 28px */
     margin-left: 1.75rem;
+}
+
+.primary-footer__copyright-statement {
+    font-size: var(--fs-15);
 }
 
 
